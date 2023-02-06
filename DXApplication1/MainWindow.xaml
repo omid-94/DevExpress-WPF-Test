@@ -1,0 +1,25 @@
+﻿<dx:ThemedWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+    x:Class="DXApplication1.MainWindow"
+    Loaded="ThemedWindow_Loaded" 
+    Title="MainWindow" Height="500" Width="800">
+    <StackPanel Orientation="Vertical">
+        <dxg:GridControl x:Name="dataGridView" 
+                         FlowDirection="RightToLeft"
+                         AutoGenerateColumns="AddNew" 
+                         EnableSmartColumnsGeneration="True"
+                         Height="400"
+                         HorizontalAlignment="Stretch" 
+                         VerticalAlignment="Stretch">
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="dataView" ShowTotalSummary="True" AllowBestFit="True" BestFitMode="VisibleRows"/>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+        <Button Background="Aqua" Margin="50,10,50,10" Height="50" Click="Button_Click">
+            <TextBlock Text="Show Info"/>
+        </Button>
+    </StackPanel>
+</dx:ThemedWindow>
