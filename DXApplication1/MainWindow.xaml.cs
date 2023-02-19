@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using DevExpress.Xpf.Core;
 using DXApplication1.Data.Services;
 using DXApplication1.Data.Models;
+using DXApplication1.Windows;
 
 namespace DXApplication1
 {
@@ -27,23 +28,16 @@ namespace DXApplication1
             InitializeComponent();
         }
 
-        private void ThemedWindow_Loaded(object sender, RoutedEventArgs e)
+        private void btnBasicDataGrid_Click(object sender, RoutedEventArgs e)
         {
-            var data = UserDataService.GetData();
-            dataGridView.ItemsSource = data;
-            dataView.BestFitArea = DevExpress.Xpf.Grid.BestFitArea.Rows;
+            var window = new BasicDataGrid();
+            window.ShowDialog();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnHamburgerMenu_Click(object sender, RoutedEventArgs e)
         {
-            var selectedItem = (UserModel) dataGridView.SelectedItem;
-            _ShowUser(selectedItem);
-        }
-
-        private void _ShowUser(UserModel user)
-        {
-            MessageBox.Show(String.Format("FirstName : {1},{0}LastName : {2},{0}Email : {3}",
-                Environment.NewLine, user.FirstName , user.LastName , user.Email));
+            var window = new HamburgerMenu();
+            window.ShowDialog();
         }
     }
 }
